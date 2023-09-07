@@ -8,4 +8,4 @@ exercices de html et css realisé
 
 - <a href="https://hugoemanuellc.github.io/exercices-html-css/Flex-exercise">Exercice : Flex</a>
 
-- <a href="https://hugoemanuellc.github.io/exercices-html-css/GRID-exercise">Exercice : Grid</a>
+- <a href="https://hugoemanuellc.github.io/exercices-html-css/GRID-exercice">Exercice : Grid</a>

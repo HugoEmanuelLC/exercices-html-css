@@ -131,7 +131,7 @@ header #btn:checked ~ ul{
 .group_1 h1{
     font-size: 65px;
     font-weight: 800;
-    line-height: 65px;
+    /* line-height: 65px; */
     color: #FFFFFF;
     text-transform: uppercase;
 }
@@ -142,7 +142,7 @@ header #btn:checked ~ ul{
     color: #007DFC;
     font-size: 26px;
     font-weight: 800;
-    line-height: 26px;
+    /* line-height: 26px; */
     margin-top: 23px;
     text-transform: capitalize;
 }

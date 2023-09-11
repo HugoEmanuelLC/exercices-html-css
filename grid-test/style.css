@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    transition: 300ms;
+    /* font-family: 'Raleway'; */
+    /* overflow-x: hidden; */
+}
+body{
+    background-color: rgb(73, 32, 32);
+    color: wheat;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    /* grid-auto-rows: 75px auto 75px; */
+    grid-template-areas: 
+        "hd hd hd hd hd hd hd hd hd"
+        "mn mn mn mn mn mn mn sb sb"
+        "ft ft ft ft ft ft ft ft ft";
+}
+header{
+    grid-area: hd;
+    background-color: blue;
+    height: 10vh;
+}
+main{
+    grid-area: mn;
+    min-height: 80vh;
+    background-color: green;
+}
+.sidebar{
+    grid-area: sb;
+    background-color: aqua;
+}
+footer{
+    grid-area: ft;
+    height: 10vh;
+    background-color: black;
+}
+.grid{
+    border: dashed 3px black;
+    display: grid;
+    /* grid-auto-flow: column; */
+    grid-template-columns: repeat(2, minmax(300px, auto));
+    gap: 10px;
+    padding: 10px;
+    grid-auto-rows: minmax(150px, auto);
+}
+.grid-items{
+    border: solid white 3px;
+}
+
+@media screen and (max-width: 800px) {
+    body{
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-areas: 
+            "hd hd hd hd hd hd hd"
+            "sb sb sb sb sb sb sb"
+            "mn mn mn mn mn mn mn"
+            "ft ft ft ft ft ft ft";
+    }
+    main{
+        min-height: 70vh;
+    }
+    .sidebar{
+        height: 10vh;
+    }
+    .grid{
+        grid-template-columns: 1fr;
+    }
+}

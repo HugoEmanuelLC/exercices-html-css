@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+.flex_container{
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+}
+.flex_container div{
+    width: 100%;
+    height: 100px;
+}
+.flex_container div:nth-child(odd){
+    background-color: red;
+}
+.flex_container div:nth-child(even){
+    background-color: green;
+}
+@media screen and (min-width: 376px) {
+    .flex_container{
+        flex-direction: row;
+    }
+}
+
+
+.grid_container{
+    background-color: gray;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    padding: 5px;
+}
+.grid_container div{
+    width: 100%;
+    height: 100px;
+}
+.grid_container div:nth-child(odd){
+    background-color: blue;
+}
+.grid_container div:nth-child(even){
+    background-color: black;
+}
+@media screen and (min-width: 376px) {
+    .grid_container{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 768px) {
+    .grid_container{
+        grid-template-columns: repeat(6, 1fr);
+    }
+}

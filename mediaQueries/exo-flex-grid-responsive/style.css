@@ -42,6 +42,21 @@ p{
     width: 100%;
     object-fit: cover;
 }
+a{
+    position: relative;
+}
+a:hover:after {
+    content: " click me! :-p";
+    color: goldenrod;
+    text-shadow: 4px 4px 4px rgb(0, 0, 0, 0.8);
+    /* display: inline-block;
+    width: 12px;
+    height: 12px; */
+    font-size: 30px;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+}
 
 
 
@@ -99,6 +114,7 @@ header .menu a:focus,
 header .menu a:hover{
     color: var(--bg-color);
 }
+
 
 
 
@@ -202,6 +218,12 @@ section .sous_grid{
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
     gap: 20px;
+}
+section .sous_grid:hover{
+    background-color: rgba(128, 128, 128, 0.2);
+}
+section .sous_grid:hover span{
+    color: white;
 }
 section .sous_grid div{
     height: 100%;

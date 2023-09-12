@@ -62,6 +62,7 @@ header .container #check{
 header .container label{
     position: fixed;
     right: 16px;
+    font-size: 26px;
     z-index: 200;
     cursor: pointer;
 }
@@ -69,9 +70,17 @@ header .container label{
 header .container .menu{
     display: flex;
 }
+
 #check:checked ~ .menu{
     right: 0;
 }
+#check:checked ~ label i {
+    color:#fcfcfc;
+}
+#check:hover ~ label i{
+    color: var(--bg-color);
+}
+
 header .menu li{
     display: flex;
     justify-content: center;

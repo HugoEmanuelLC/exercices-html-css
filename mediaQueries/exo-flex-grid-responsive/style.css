@@ -104,6 +104,9 @@ main .grid .sideBar
 {
     grid-column: 1/2;
 }
+main .grid img{
+    height: 300px;
+}
 main .grid .sideBar{
     background-color: black;
     color: white;
@@ -278,6 +281,7 @@ section .sous_grid div p{
         gap: 25px;
     }
     main .grid img{
+        height: 100%;
         grid-column: 1/3;
         grid-row: 1/2;
     }

@@ -1,0 +1,22 @@
+
+
+
+$ipad: 768px;
+$ipad_pro: 1024px; 
+$laptop13: 1280px;
+
+@mixin ipad( $mediaMin: $ipad){
+    @media screen and (min-width: $mediaMin){
+        @content;
+    }
+}
+@mixin ipad_pro( $media: $ipad_pro){
+    @media screen and (min-width: $media) {
+        @content;
+    }
+}
+@mixin laptop13( $media: $laptop13){
+    @media screen and (min-width: $media) {
+        @content;
+    }
+}

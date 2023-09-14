@@ -1,0 +1,88 @@
+header{
+    padding: 30px 0;
+    .container{
+        // border: solid 2px green;
+        position: relative;
+        @extend .d_j_a_ctr;
+    }
+    // .logo{
+        
+    // }
+    
+    .menu{
+        display: flex;
+        gap: 33px;
+        a{
+            font-size: 14px;
+            // line-height: 16.8px;
+            font-weight: 400;
+            color: $txt_color_primary1;
+        }
+    }
+
+    label{
+        position: fixed;
+        right: 16px;
+        font-size: 26px;
+        z-index: 200;
+        cursor: pointer;
+        @include ipad_pro{
+            display: none;
+        }
+    }
+    #check{
+        display: none;
+    }
+    #check:checked ~ nav{
+        right: 0;
+    }
+    #check:checked ~ label i {
+        color:#fcfcfc;
+    }
+    #check:hover ~ label i{
+        color: var(--bg-color);
+    }
+
+    nav{
+        display: none;
+        // position: fixed;
+        //     top: 0;
+        //     right: 0;
+            // z-index: 100;
+        // width: 100vw;
+        // height: 100vh;
+        // background-color: black;
+        @include ipad_pro{
+            display: block;
+            // width: 100%;
+            // height: 100%;
+        }
+        // .menu{
+        //     border: solid 2px red;
+            
+        //     @include ipad_pro{
+        //         position: inherit;
+        //         flex-direction: row;
+        //     }
+        // }
+
+        // @include ipad_pro{
+        //     position: inherit;
+        // }
+    }
+    // .img_top{
+    //     border: solid 2px red;
+    //     position: absolute;
+    //         top: -150px;
+    //         right: -150px;
+    //         width: 50%;
+    //         z-index: -1;
+    //     max-width: 730px;
+    // }
+}
+
+
+
+// @media screen and (min-width:1024px) {
+    
+// }

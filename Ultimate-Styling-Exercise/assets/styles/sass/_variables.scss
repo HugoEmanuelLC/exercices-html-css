@@ -1,0 +1,47 @@
+
+// COLORS
+$bg_color_primary1: darken(#2B2D66, 16);
+$bg_color_primary1_2: #2B2D66;
+$bg_color_primary2: darken(#4D4F95, 16);
+$bg_color_primary2_2: #4D4F95;
+$bg_color_primary3: #00012C28;
+$txt_color_primary1: #FFFFFF80;
+$txt_color_primary2: #FFFFFF;
+$txt_color_primary3: #E6606C;
+$txt_color_primary4: #E8AB36;
+$box_shadow: #00012C28;
+
+// DISPLAYS
+.d_j_a_ctr{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// MEDIA QUERIES
+
+// AUTRES
+.a_btn{
+    padding: 15px 30px;
+    border-radius: 75px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 4.5%;
+}
+.h2{
+    font-family: 'Barlow Condensed';
+    font-size: 56px;
+    font-weight: 300;
+}
+
+.logo{
+    a, a span{
+        font-family: 'Inter';
+        font-size: 32px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+    a span{
+        color: $txt_color_primary3;
+    }
+}

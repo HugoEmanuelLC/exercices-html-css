@@ -13,7 +13,7 @@ footer{
         }
     }
     .body{
-        border: solid 2px white;
+        // border: solid 2px white;
         display: grid;
         grid-template-columns: 1fr;
 
@@ -26,7 +26,7 @@ footer{
         }
 
         ul{
-            border: solid 2px red;
+            // border: solid 2px red;
                 display: flex;
                 flex-direction: column;
             li{
@@ -90,6 +90,22 @@ footer{
                 min-height: 48px;
                 min-width: 48px;
                 // padding: 16px;
+                cursor: pointer;
+            }
+            span:hover{
+                animation-name: links;
+                animation-duration: 1.5s;
+                animation-timing-function: ease-in-out;
+            }
+            @keyframes links {
+                50%{
+                    // transform: rotateX(90deg);
+                    transform: rotateY(380deg);
+                }
+                100%{
+                    // transform: rotateX(360deg);
+                    transform: rotateY(380deg);
+                }
             }
         }
         

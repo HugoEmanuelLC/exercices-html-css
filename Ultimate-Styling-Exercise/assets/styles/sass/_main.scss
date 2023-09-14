@@ -1,15 +1,73 @@
 
 main{
-    // background-color: black;
-    // max-width: 1440px;
-    // margin: 0 auto;
     section{
-        border: solid 2px palevioletred;
+        // border: solid 2px palevioletred;
         margin: 100px 0;
         display: grid;
         grid-template-columns: 1fr;
+        .button-container-1 {
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            border-radius: 8px;
+           
+            button {
+                @extend .a_btn;
+                position: absolute;
+                    top: 0;
+                    left: 0;
+                width: 100%;
+                height: 100%;
+           
+            @include button($txt_color_primary3,
+                "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+                2300%,
+                100%,
+                none,
+                #fff);
+                cursor: pointer;
+                -webkit-animation: ani2 0.7s steps(22) forwards;
+                animation: ani2 0.7s steps(22) forwards;
+           
+            &:hover {
+                -webkit-animation: ani 0.7s steps(22) forwards;
+                animation: ani 0.7s steps(22) forwards;
+                }
+            }
+        }
+        .button-container-2 {
+            position: relative;
+            overflow: hidden;
+            transition: 0.5s;
+            border-radius: 8px;
+           
+            button {
+                @extend .a_btn;
+                position: absolute;
+                    top: 0;
+                    left: 0;
+                width: 100%;
+                height: 100%;
+           
+            @include button($txt_color_primary2,
+                "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+                2300%,
+                100%,
+                none,
+                #000);
+                cursor: pointer;
+                -webkit-animation: ani2 0.7s steps(22) forwards;
+                animation: ani2 0.7s steps(22) forwards;
+           
+            &:hover {
+                -webkit-animation: ani 0.7s steps(22) forwards;
+                animation: ani 0.7s steps(22) forwards;
+                }
+            }
+        }
+        @include anime_a;
         .intro{
-            border: solid 2px red;
+            // border: solid 2px red;
             max-width: 500px;
             position: relative;
             margin: 0 auto;
@@ -46,15 +104,14 @@ main{
                 @extend .a_btn;
             }
             a:first-child{
-                background-color: $txt_color_primary3;
+                background-color: black;
             }
             a:last-child{
-                background-color: $txt_color_primary2;
-                color: black;
+                background-color: black;
+                color: white;
             }
             img{
                 position: absolute;
-                // border: solid 2px white;
             }
             .img_up{
                 top: -48px;
@@ -68,7 +125,6 @@ main{
     }
 
     #about{
-        // background-color: wheat;
         display: grid;
             grid-template-columns: 1fr;
             align-items: center;
@@ -78,11 +134,11 @@ main{
             grid-template-columns: 1fr 1fr;
             gap: 70px;
         }
-        img{
-            border: solid white 3px;
-        }
+        // img{
+        //     border: solid white 3px;
+        // }
         .about{
-            border: solid green 3px;
+            // border: solid green 3px;
             position: relative;
             height: 100%;
             max-width: 570px;
@@ -99,22 +155,18 @@ main{
                 position: absolute;
                 top: 70px;
                 right: 0;
-                width: 10rem;
+                width: 12rem;
                 @include ipad{
                     width: 16rem;
                     right: 40px;
                 }
             }
             h2{
-                border: solid 2px red;
+                // border: solid 2px red;
                 @extend .h2;
-                // width: 90%;
                 @include ipad{
                     width: 75%;
                 }
-                // @include laptop13{
-                //     // width: 85%;
-                // }
             }
             p{
                 font-size: 16px;
@@ -125,19 +177,14 @@ main{
                 font-weight: 400;
                 color: $txt_color_primary2;
             }
-            // h2,p{
-            //     border: solid 2px yellow;
-            // }
             a{
-                // display: block;
                 @extend .a_btn;
-                background-color: $txt_color_primary3;
+                background-color: black;
             }
         }
     }
 
     #projects{
-        // grid-template-rows: repeat(2, 1fr);
         .projects{
             position: relative;
             max-width: 570px;
@@ -150,7 +197,6 @@ main{
                     left: 5px;
             }
             h2{
-                // border: solid 2px white;
                 @extend .h2;
                 margin-bottom: 32px;
             }
@@ -161,7 +207,7 @@ main{
             }
         }
         .projets_expo{
-            border: solid 2px greenyellow;
+            // border: solid 2px greenyellow;
             margin: 70px 0 0;
             display: flex;
                 justify-content: center;
@@ -178,17 +224,60 @@ main{
                     flex-direction: column;
                     gap: 20px;
                     max-width: 370px;
-                // box-shadow: 4px 4px 4px $bg_color_primary3;
                 box-shadow: 0px 24px 48px 0px $bg_color_primary3;
                 border-radius: 20px;
                 border: solid 3px $bg_color_primary2_2;
                 padding-bottom: 30px;
-                // img{
-                //     object-fit: contain;
-                //     width: 100%;
-                //     height: 100%;
-                // }
-                p,span{
+
+                
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                // margin-top: 8vh;
+                overflow: hidden;
+                // border: 1px solid #000;
+                // font-family: 'Lato', sans-serif;
+                // font-weight: 300;
+                transition: 0.5s;
+                // letter-spacing: 1px;
+                // border-radius: 8px;
+
+                img {
+                    width: 101%;
+                    height: 100%;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 300;
+                    font-size: 11px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                  
+                  
+                    @include button(#000, "https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png",
+                    7100%,
+                    100%,
+                    none,
+                    #fff);
+                    cursor: pointer;
+                    -webkit-animation: ani2 0.7s steps(70) forwards;
+                    animation: ani2 0.7s steps(70) forwards;
+                  
+                    &:hover {
+                    -webkit-animation: ani 0.7s steps(70) forwards;
+                    animation: ani 0.7s steps(70) forwards;
+                    }
+                }
+
+                @include anime_a;
+
+                .span_anime{
+                    position: absolute;
+                        top: 10%;
+                        left: 30%;
+                    // z-index: 5;
+                    font-size: 10rem;
+                }
+
+                p, .date{
                     width: 70%;
                     margin: 0 32px;
                     line-height: 32px;
@@ -198,7 +287,7 @@ main{
                     font-size: 24px;
                     color: $txt_color_primary2;
                 }
-                span{
+                .date{
                     font-size: 16px;
                     color: $txt_color_primary1;
                 }

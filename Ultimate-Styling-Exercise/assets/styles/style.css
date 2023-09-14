@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Barlow:wght@300;400;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Lato:100,300,400");
+@import url("https://fonts.googleapis.com/css?family=Roboto:100");
 .d_j_a_ctr, header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.a_btn, main #about .about a, main section .intro a {
+.a_btn, main #about .about a, main section .intro a, main section .button-container-2 button, main section .button-container-1 button {
   padding: 15px 30px;
   border-radius: 75px;
   font-size: 14px;
@@ -36,17 +38,16 @@
   box-sizing: border-box;
   font-family: "Barlow", sans-serif;
   scroll-behavior: smooth;
+  transition: 500ms;
 }
 
 .container {
-  border: solid 2px red;
   max-width: 1440px;
   padding: 0 4%;
   margin: 0 auto;
 }
 
 body {
-  border: solid 2px blue;
   background-color: #13142d;
   color: #FFFFFF;
   min-height: 100vh;
@@ -59,12 +60,20 @@ body {
   overflow-x: hidden;
   background-image: url("../images/deco1.png");
   background-repeat: no-repeat;
-  background-position: top -120px right -120px;
+  background-position: top -1% right -70%;
+  background-size: 80%;
+}
+@media screen and (min-width: 768px) {
+  #page {
+    background-size: auto;
+    background-position: top -120px right -120px;
+  }
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 p {
@@ -128,35 +137,142 @@ header label {
     display: none;
   }
 }
+header nav {
+  position: fixed;
+  top: 0;
+  right: -110vw;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(0, 0, 0);
+}
+@media screen and (min-width: 1024px) {
+  header nav {
+    position: unset;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+  }
+}
+header nav .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 100px;
+}
+@media screen and (min-width: 1024px) {
+  header nav .menu {
+    padding-top: 0;
+    gap: 33px;
+  }
+}
+header nav .menu li {
+  display: flex;
+  align-items: center;
+}
+header nav .menu li a {
+  width: 40%;
+  padding: 10px;
+}
+header nav .menu li a:hover {
+  width: 100%;
+  background-color: white;
+  color: black;
+}
+@media screen and (min-width: 1024px) {
+  header nav .menu li a {
+    color: rgba(255, 255, 255, 0.5019607843);
+    background-color: transparent;
+  }
+}
+@media screen and (min-width: 1024px) {
+  header nav .menu {
+    flex-direction: row;
+  }
+}
 header #check {
   display: none;
 }
 header #check:checked ~ nav {
   right: 0;
 }
-header #check:checked ~ label i {
-  color: #fcfcfc;
-}
-header #check:hover ~ label i {
-  color: var(--bg-color);
-}
-header nav {
-  display: none;
-}
-@media screen and (min-width: 1024px) {
-  header nav {
-    display: block;
-  }
-}
 
 main section {
-  border: solid 2px palevioletred;
   margin: 100px 0;
   display: grid;
   grid-template-columns: 1fr;
 }
+main section .button-container-1 {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  border-radius: 8px;
+}
+main section .button-container-1 button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #E6606C;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  animation: ani2 0.7s steps(22) forwards;
+}
+main section .button-container-1 button:hover {
+  animation: ani 0.7s steps(22) forwards;
+}
+main section .button-container-2 {
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  border-radius: 8px;
+}
+main section .button-container-2 button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FFFFFF;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  animation: ani2 0.7s steps(22) forwards;
+}
+main section .button-container-2 button:hover {
+  animation: ani 0.7s steps(22) forwards;
+}
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
 main section .intro {
-  border: solid 2px red;
   max-width: 500px;
   position: relative;
   margin: 0 auto;
@@ -192,11 +308,11 @@ main section .intro div {
   gap: 24px;
 }
 main section .intro a:first-child {
-  background-color: #E6606C;
+  background-color: black;
 }
 main section .intro a:last-child {
-  background-color: #FFFFFF;
-  color: black;
+  background-color: black;
+  color: white;
 }
 main section .intro img {
   position: absolute;
@@ -222,11 +338,7 @@ main #about {
     gap: 70px;
   }
 }
-main #about img {
-  border: solid white 3px;
-}
 main #about .about {
-  border: solid green 3px;
   position: relative;
   height: 100%;
   max-width: 570px;
@@ -246,16 +358,13 @@ main #about .about .img_up {
   position: absolute;
   top: 70px;
   right: 0;
-  width: 10rem;
+  width: 12rem;
 }
 @media screen and (min-width: 768px) {
   main #about .about .img_up {
     width: 16rem;
     right: 40px;
   }
-}
-main #about .about h2 {
-  border: solid 2px red;
 }
 @media screen and (min-width: 768px) {
   main #about .about h2 {
@@ -272,7 +381,7 @@ main #about .about h2 + p {
   color: #FFFFFF;
 }
 main #about .about a {
-  background-color: #E6606C;
+  background-color: black;
 }
 main #projects .projects {
   position: relative;
@@ -294,7 +403,6 @@ main #projects .projects p {
   line-height: 32px;
 }
 main #projects .projets_expo {
-  border: solid 2px greenyellow;
   margin: 70px 0 0;
   display: flex;
   justify-content: center;
@@ -317,8 +425,60 @@ main #projects .projets_expo a {
   border-radius: 20px;
   border: solid 3px #4D4F95;
   padding-bottom: 30px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+  transition: 0.5s;
 }
-main #projects .projets_expo a p, main #projects .projets_expo a span {
+main #projects .projets_expo a img {
+  width: 101%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 1px;
+  font-weight: bold;
+  background: #000;
+  -webkit-mask: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png");
+  mask: url("https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png");
+  -webkit-mask-size: 7100% 100%;
+  mask-size: 7100% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  animation: ani2 0.7s steps(70) forwards;
+}
+main #projects .projets_expo a img:hover {
+  animation: ani 0.7s steps(70) forwards;
+}
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+main #projects .projets_expo a .span_anime {
+  position: absolute;
+  top: 10%;
+  left: 30%;
+  font-size: 10rem;
+}
+main #projects .projets_expo a p, main #projects .projets_expo a .date {
   width: 70%;
   margin: 0 32px;
   line-height: 32px;
@@ -328,7 +488,7 @@ main #projects .projets_expo a p {
   font-size: 24px;
   color: #FFFFFF;
 }
-main #projects .projets_expo a span {
+main #projects .projets_expo a .date {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.5019607843);
 }
@@ -346,7 +506,6 @@ footer .container .hr {
   width: 100%;
 }
 footer .body {
-  border: solid 2px white;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -361,7 +520,6 @@ footer .body {
   }
 }
 footer .body ul {
-  border: solid 2px red;
   display: flex;
   flex-direction: column;
 }
@@ -435,6 +593,20 @@ footer .body .links span {
   border-radius: 50px;
   min-height: 48px;
   min-width: 48px;
+  cursor: pointer;
+}
+footer .body .links span:hover {
+  animation-name: links;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes links {
+  50% {
+    transform: rotateY(380deg);
+  }
+  100% {
+    transform: rotateY(380deg);
+  }
 }
 footer .copyright {
   margin-bottom: 25px;
